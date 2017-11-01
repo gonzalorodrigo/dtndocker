@@ -1,0 +1,7 @@
+jupyterhub
+notebook
+paramiko
+numpy
+pymongo
+matplotlib
+psutil

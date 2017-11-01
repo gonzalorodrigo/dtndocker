@@ -1,0 +1,20 @@
+version: '3.2'
+
+services:
+  jupyter:
+    build: .
+    volumes:
+      - ./files_storage:/tmp/files_storage
+ #     - .:/code
+ #     - ./remoteshelloverfs/shared:/shared
+ #     - ./import_images:/tmp/ncem_images
+ #     - ./preview_images:/tmp/preview_images
+    ports:
+      - "8000:8000"
+ #   depends_on:
+ #     - db
+ #   environment:   
+ #     - FILE_SHELL_COMMANDS=/shared/command.txt
+ #     - FILE_SHELL_OUTPUT=/shared/output.txt
+ #     - FILE_SHELL_DIR=/code/remoteshelloverfs
+ #     - FILE_SHELL_ENABLE=1gonzalo-pro:dtndocker gonzalo$ 
