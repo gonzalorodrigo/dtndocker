@@ -1,0 +1,3 @@
+[submodule "gridftp/docker"]
+	path = gridftp/docker
+	url = https://github.com/esnet/docker
