@@ -25,5 +25,6 @@ RUN git fetch
 RUN git checkout filegraph
 
 USER root
+pip install /home/myuser/requirements.txt
 WORKDIR /home/myuser/DTN_monitor
 CMD ["jupyterhub"]
