@@ -23,7 +23,7 @@ RUN git clone https://github.com/gonzalorodrigo/DTN_monitor.git
 WORKDIR /home/myuser/DTN_monitor
 RUN git fetch
 RUN git checkout filegraph
-
 USER root
+RUN pip install -r requirements.txt
 WORKDIR /home/myuser/DTN_monitor
 CMD ["jupyterhub"]
