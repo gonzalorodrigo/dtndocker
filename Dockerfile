@@ -6,7 +6,7 @@ WORKDIR /code
 
 
 RUN apt-get update
-RUN apt-get -y install python3-dev python-dev libzmq3-dev 
+RUN apt-get -y install python3-dev python-dev libzmq3-dev
 RUN apt-get -y install npm nodejs-legacy
 RUN npm install -g configurable-http-proxy
 RUN apt-get -y install libfreetype6-dev
@@ -25,6 +25,6 @@ RUN git fetch
 RUN git checkout filegraph
 
 USER root
-pip install /home/myuser/requirements.txt
+CMD pip install /home/myuser/requirements.txt
 WORKDIR /home/myuser/DTN_monitor
 CMD ["jupyterhub"]

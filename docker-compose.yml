@@ -13,17 +13,17 @@ services:
       - "8000:8000"
  #   depends_on:
  #     - db
- #   environment:   
+ #   environment:
  #     - FILE_SHELL_COMMANDS=/shared/command.txt
  #     - FILE_SHELL_OUTPUT=/shared/output.txt
  #     - FILE_SHELL_DIR=/code/remoteshelloverfs
  #     - FILE_SHELL_ENABLE=1gonzalo-pro:dtndocker gonzalo$
 
-  grid-ftp1: 
-    build: ./gridftp/docker/dtn-anonymous-gridftp
+  grid-ftp1:
+    build: ./gftp
     volumes:
       - ./files_storage:/data
-    ports: 
+    ports:
       - "192.168.56.10:2811:2811"
       - "192.168.56.10:50000-51000:50000-51000"
       - "192.168.56.10:4823:4823"
@@ -32,11 +32,11 @@ services:
       - "192.168.56.10:861:861"
       - "192.168.56.10:8760-9960:8760-9960"
 
-  grid-ftp2: 
-    build: ./gridftp/docker/dtn-anonymous-gridftp
-    volumes: 
+  grid-ftp2:
+    build: ./gftp
+    volumes:
       - ./files_storage:/data
-    ports: 
+    ports:
       - "192.168.56.11:2811:2811"
       - "192.168.56.11:50000-51000:50000-51000"
       - "192.168.56.11:4823:4823"
