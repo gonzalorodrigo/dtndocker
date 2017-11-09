@@ -20,6 +20,8 @@ run apt update
 run apt -y install git perfsonar-tools globus-gridftp python-pip
 run pip install flask
 
+RUN adduser gridftp
+ADD gridftp.conf /etc/gridftp.conf
 ADD ./start.sh .
 
 CMD "./start.sh"
