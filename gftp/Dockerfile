@@ -19,3 +19,7 @@ run dpkg -i ./globus-toolkit-repo_latest_all.deb
 run apt update
 run apt -y install git perfsonar-tools globus-gridftp python-pip
 run pip install flask
+
+ADD ./start.sh .
+
+CMD "./start.sh"
