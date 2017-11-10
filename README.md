@@ -10,9 +10,9 @@ globus-url-copy -vb -fast -p 4  ftp://192.168.100.2:2811/data/10G.dat ftp://192.
 
 
 
-##Cheat-sheet
+## Cheat-sheet
 
-###Installing docker
+### Installing docker
 ~~~
 sudo sudo apt-get install     apt-transport-https     ca-certificates     curl     software-properties-comm
 on
@@ -25,7 +25,7 @@ sudo apt-get update
 sudo apt-get install docker-ce
 ~~~
 
-###Installing certbot
+### Installing certbot
 ~~~
 echo "deb http://ppa.launchpad.net/certbot/certbot/ubuntu xenial main" > /etc/apt/sources.list.d/certbot-ubuntu-certbot-xenial.list 
 sudo apt-get update
@@ -35,7 +35,7 @@ sudo apt-get update
 sudo apt-get install certbot 
 ~~~
 
-###Generate certificate
+### Generate certificate
 ~~~
 sudo certbot certonly --standalone -w /var/certs/caliber -d 4x100g-dtn-mgmt2.sc17.org -m gprodrigoalvarez@lbl.gov  --agree-tos 
 ~~~
