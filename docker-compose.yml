@@ -4,7 +4,8 @@ services:
   jupyter:
     build: .
     volumes:
-      - ./files_storage:/tmp/files_storage
+      - /home/gonzalo/data:/data
+      - /etc/letsencrypt/:/etc/letsencrypt/
  #     - .:/code
  #     - ./remoteshelloverfs/shared:/shared
  #     - ./import_images:/tmp/ncem_images

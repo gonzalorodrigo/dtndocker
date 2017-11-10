@@ -27,4 +27,5 @@ RUN git checkout filegraph
 USER root
 CMD pip install /home/myuser/requirements.txt
 WORKDIR /home/myuser/DTN_monitor
+ADD jupyterhub_config.py /home/myuser/DTN_monitor
 CMD ["jupyterhub"]
