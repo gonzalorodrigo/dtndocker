@@ -4,6 +4,16 @@ RUN mkdir /code
 WORKDIR /code
 
 
+# certbot generate certificate
+RUN echo "deb http://ftp.debian.org/debian jessie-backports main" > /etc/apt/sources.list.d/bp.list
+RUN apt-get update
+RUN apt-get -y install certbot -t jessie-backports
+#RUN apt-get -y install certbot
+
+RUN mkdir /certs
+RUN certbot certonly --standalone -w /certs -d 4x100g-dtn-mgmt2.sc17.org -m gprodrigoalvarez@lbl.gov  --agree-tos 
+
+
 
 RUN apt-get update
 RUN apt-get -y install python3-dev python-dev libzmq3-dev
