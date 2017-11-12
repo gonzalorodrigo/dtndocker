@@ -1,5 +1,6 @@
 import os
-j_location=os.getenv("JUPYTERHUB_LOCATION", '/home/myuser')
+user_folder="/home/{}".format(os.getenv("J_USER", "myuser"))
+j_location=os.getenv("JUPYTERHUB_LOCATION", user_folder)
 
 c = get_config()
 c.JupyterHub.cookie_secret_file = ('{}/jupyterhub_cookie_secret'
