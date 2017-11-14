@@ -30,5 +30,6 @@ RUN git checkout filegraph
 USER root
 CMD pip install "/home/${J_USER}/requirements.txt"
 WORKDIR "/home/${J_USER}/DTN_monitor"
+CMD pip install "/home/${J_USER}/DTN_monitor/requirements.txt"
 ADD jupyterhub_config.py "/home/${J_USER}/DTN_monitor"
 CMD ["jupyterhub", "--port=7979"]
