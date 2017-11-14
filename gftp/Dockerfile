@@ -23,7 +23,8 @@ run pip install flask
 RUN adduser gridftp
 RUN mkdir /data
 RUN chown gridftp /data
-ADD gridftp.conf /etc/gridftp.conf
+ARG CONF_FILE
+ADD ${CONF_FILE} /etc/gridftp.conf
 ADD ./start.sh .
 
 CMD "./start.sh"

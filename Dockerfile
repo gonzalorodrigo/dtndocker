@@ -21,6 +21,7 @@ RUN useradd -ms /bin/bash "$J_USER"
 RUN echo "$J_USER:$J_PASS" | chpasswd
 USER  "$J_USER"
 WORKDIR "/home/${J_USER}"
+RUN mkdir "/home/${J_USER}/notebooks"
 RUN git clone https://github.com/gonzalorodrigo/DTN_monitor.git
 WORKDIR "/home/${J_USER}/DTN_monitor"
 RUN git fetch
@@ -30,4 +31,4 @@ USER root
 CMD pip install "/home/${J_USER}/requirements.txt"
 WORKDIR "/home/${J_USER}/DTN_monitor"
 ADD jupyterhub_config.py "/home/${J_USER}/DTN_monitor"
-CMD ["jupyterhub"]
+CMD ["jupyterhub", "--port=7979"]
